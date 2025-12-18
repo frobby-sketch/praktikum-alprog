@@ -10,7 +10,7 @@ int main()
     cout << "Input: ";
     cin >> number;
 
-    // validasi input
+  
     if (number < 0)
     {
         cout << "Invalid input" << endl;
@@ -33,3 +33,4 @@ unsigned long long factorial(int n)
    
     return n * factorial(n - 1);
 }
+
