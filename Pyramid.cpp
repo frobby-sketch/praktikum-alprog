@@ -2,31 +2,31 @@
 
 using namespace std;
 
-void pyramid(int height);
+void pyramid(int height, int current = 1);
 
 int main()
 {
-int height = 5;
- pyramid2(height);
+    int height = 5;
+    pyramid(height);
 
- system("pause");
-
-return 0;
+    return 0;
 }
 
-void pyramid(int height)
+void pyramid(int height, int current)
 {
-for(int i = 1; i <= height; i++) {
- 
- for (int j = 0; j < height - i; j++) {
- cout << " ";
- }
- 
- 
-	for (int k = 0; k < (2 * i - 1); k++) {
-		cout << char(178);
- }
- cout << endl;
+    if (current > height)
+        return;
+
+    
+    for (int i = 0; i < height - current; i++)
+        cout << " ";
+
+    for (int i = 0; i < (2 * current - 1); i++)
+        cout << char(178);
+
+    cout << endl;
+
+    pyramid(height, current + 1);
 }
-}
+
 
