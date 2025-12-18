@@ -1,33 +1,32 @@
-﻿
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-void pyramid(int height, int current = 1);
+double dist(double x1, double y1, double x2, double y2);
 
 int main()
 {
-    int height = 5;
-    pyramid(height);
+    double x1, y1, x2, y2;
+
+    cout << "Objek 1 (x1 y1): ";
+    cin >> x1 >> y1;
+
+    cout << "Objek 2 (x2 y2): ";
+    cin >> x2 >> y2;
+
+    cout << "Jarak kedua objek: " 
+         << dist(x1, y1, x2, y2) << endl;
 
     return 0;
 }
 
-void pyramid(int height, int current)
+double dist(double x1, double y1, double x2, double y2)
 {
-    
-    if (current > height)
-        return;
+    double deltaX = x2 - x1;
+    double deltaY = y2 - y1;
 
-    for (int i = 0; i < height - current; i++)
-        cout << " ";
-
-    /
-    for (int i = 0; i < (2 * current - 1); i++)
-        cout << char(178);
-
-    cout << endl;
-
-    pyramid(height, current + 1);
+    return hypot(deltaX, deltaY);
 }
+
 
